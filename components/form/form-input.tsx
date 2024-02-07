@@ -1,10 +1,11 @@
 "use client";
-
-import { Label } from "../ui/label";
 import { forwardRef } from "react";
 import { useFormStatus } from "react-dom";
+
+import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import { cn } from "@/lib/utils";}
+import { cn } from "@/lib/utils";
+import { FormErrors } from "./form-errors";
 
 interface FormInputProps {
   id: string;
@@ -44,7 +45,7 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
               htmlFor={id}
               className="text-xs font-semibold text-neutral-700"
             >
-              Label
+              {label}
             </Label>
           ) : null}
           <Input
@@ -57,9 +58,7 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
             placeholder={placeholder}
             type={type}
             disabled={pending || disabled}
-            className={cn("text-sm px-2 py-1 h-7",
-            className, 
-            )}
+            className={cn("text-sm px-2 py-1 h-7", className)}
             aria-describedby={`${id}-error`}
           />
         </div>
