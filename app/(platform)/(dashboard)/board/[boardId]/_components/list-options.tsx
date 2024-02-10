@@ -19,7 +19,7 @@ import { copyList } from "@/actions/copy-list";
 
 interface ListOptionsProps {
   data: List;
-  onAddCard: () => ValidityState;
+  onAddCard: () => void;
 }
 
 export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
@@ -51,6 +51,7 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
 
     executeDelete({ id, boardId });
   };
+
   const onCopy = (formData: FormData) => {
     const id = formData.get("id") as string;
     const boardId = formData.get("boardId") as string;

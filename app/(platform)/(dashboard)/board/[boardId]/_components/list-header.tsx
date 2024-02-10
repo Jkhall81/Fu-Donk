@@ -2,6 +2,7 @@
 
 interface ListHeaderProps {
   data: List;
+  onAddCard: () => void;
 }
 
 import { useState, useRef, ElementRef } from "react";
@@ -14,7 +15,7 @@ import { updateList } from "@/actions/update-list";
 import { toast } from "sonner";
 import { ListOptions } from "./list-options";
 
-export const ListHeader = ({ data }: ListHeaderProps) => {
+export const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
   const [title, setTitle] = useState(data.title);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -101,7 +102,7 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
           {title}
         </div>
       )}
-      <ListOptions data={data} onAddCard={() => {}} />
+      <ListOptions data={data} onAddCard={onAddCard} />
     </div>
   );
 };
