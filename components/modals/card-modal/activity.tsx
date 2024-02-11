@@ -1,6 +1,6 @@
 "use client";
 
-import { AcitivityItem } from "@/components/activity-item";
+import { ActivityItem } from "@/components/activity-item";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AuditLog } from "@prisma/client";
 import { ActivityIcon } from "lucide-react";
